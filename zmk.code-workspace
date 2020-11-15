@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "../zmk"
+		},
+		{
+			"path": "../zmk-config-split-template"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.overlay": "dts",
+			"*.keymap": "dts",
+			"array": "c",
+			"string": "c",
+			"string_view": "c",
+			"future": "c",
+			"system_error": "c",
+			"random": "c",
+			"memory": "c"
+		}
+	}
+}
