@@ -1,0 +1,80 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+//#include "okke_keymap.h"
+
+
+#define DEF 0
+#define NUM 1
+#define SYM 2
+#define NAV 3
+#define I3  4
+
+/ {
+	keymap {
+		compatible = "zmk,keymap";
+
+		def_layer {
+			bindings = <
+	&kp Q       &kp W      &kp E      &kp R      &kp T       &kp Y     &kp U      &kp I      &kp O      &kp P   
+	&mt LCTL A  &mt LGUI S &mt LALT D &mt LSFT F &kp G       &kp H     &mt LSFT J &mt LALT K &mt LGUI L &mt LCTL QUOT
+	&kp Z 		&kp X	   &lt I3 C   &kp V      &kp B       &kp N     &lt I3 M   &kp CMMA   &kp DOT    &kp SCLN
+	                       &lt NAV TAB &lt SYM SPC &lt NUM ENT &lt NAV BKSP &osk LSFT  &kp DEL
+			>;
+		};
+		
+		num_layer {
+			bindings = <
+	&kp F1       &kp F2      &kp F3      &kp F4      &kp F5       &kp F6     &kp F7      &kp F8      &kp F9      &kp F0   
+	&mt LCTL NUM_1  &mt LGUI NUM_2 &mt LALT NUM_3 &mt LSFT NUM_4 &kp NUM_5       &kp NUM_6     &mt LSFT NUM_7 &mt LALT NUM_8 &mt LGUI NUM_9 &mt LCTL NUM_0
+	&kp F11  &kp F12   &bt CLR &bt BT_CLR &bt BT_NXT &none &none &none &none &none
+	                       &kp TAB &kp SPC &trans &kp BKSP &osk LSFT  &kp DEL
+			>;
+		};
+
+		sym_layer {
+			bindings = <
+	&lsft NUM_1 &lsft NUM_2 &lsft NUM_3 &lsft NUM_4 &lsft NUM_5 &lsft NUM_6 &lsft NUM_7 &lsft NUM_8 &lsft FSLH &none
+	&mt LCTL (LSFT|EQL) &mt LGUI EQL &mt LALT (LSFT|NUM_9) &mt LSFT (LSFT|NUM_0) &none &none &mt LSFT (LSFT|RBKT) &mt LALT (LSFT|LBKT) &mt LGUI RBKT &mt LCTL LBKT
+	 &kp BSLH &kp (LSFT|BSLH) &kp MINUS &kp (LSFT|MINUS) &none &none &kp (LSFT|SCLN) &kp SCLN &kp (LSFT|FSLH) &kp FSLH
+	                       &kp TAB &trans &kp ENT &kp BKSP &osk LSFT  &kp DEL
+			>;
+		};
+
+		nav_layer {
+			bindings = <
+	&none &none &none &none &none &none &kp HOME &kp PGDN &kp PGUP &kp END
+	&none &none &none &none &none &none &kp LARW &kp DARW &kp UARW &kp RARW
+	&none &none &none &none &none &none &none &none &none &none &none &none 
+	        	&kp TAB &kp SPC &kp ENT &trans &osk LSFT  &kp DEL
+			>;
+		};
+
+		i3_layer {
+			bindings = <
+	&none &none &none &none &none &none &none &none &none &none &none &none 
+	&i3 NUM_1 NUM_1 &i3 NUM_2 NUM_2 &i3 NUM_3 NUM_3 &i3 NUM_4 NUM_4 &i3 NUM_5 NUM_5 &i3 NUM_6 NUM_6 &i3 NUM_7 NUM_7 &i3 NUM_8 NUM_8 &i3 NUM_9 NUM_9 &i3 NUM_0 NUM_0 
+	&none &none &none &none &none &none &none &none &none &none &none &none 
+	            &kp TAB &kp SPC &kp ENT &kp BKSP &osk LSFT  &kp DEL
+			>;
+		};
+	};
+
+};
+
+
+&oled {
+	compatible = "solomon,ssd1306fb";
+	reg = <0x3c>;
+	label = "DISPLAY";
+	width = <128>;
+	height = <64>;
+	segment-offset = <0>;
+	page-offset = <0>;
+	display-offset = <0>;
+	multiplex-ratio = <63>;
+	prechargep = <0x22>;
+	// // upside-down oled screen
+	com-invdir;
+	segment-remap;
+};
