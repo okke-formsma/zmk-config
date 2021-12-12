@@ -6,8 +6,7 @@
 #define NUM 1
 #define SYM 2
 #define NAV 3
-#define I3  4
-#define SYS 5
+#define SYS 4
 
 &mt {
     flavor = "tap-preferred";
@@ -33,19 +32,10 @@
     };
 
 / {
-    behaviors {
-        i3: behavior_ithree {
-			compatible = "zmk,behavior-hold-tap";
-			label = "I_THREE";
-			flavor = "tap-preferred";
-			tapping-term-ms = <500>;
-            #binding-cells = <2>;
-			bindings = <&kp>, <&kp>;
-		};
-    };
 
     combos {
         compatible = "zmk,combos";
+		/*
         COMBO(NUM_1, 0 10)
         COMBO(NUM_2, 1 11)
         COMBO(NUM_3, 2 12)
@@ -56,8 +46,9 @@
         COMBO(NUM_8, 7 17)
         COMBO(NUM_9, 8 18)
         COMBO(NUM_0, 9 19)
-
+		*/
         COMBO(ESC, 10 20)
+		/*
         COMBO(GRAVE, 11 21)
         COMBO(MINUS, 12 22)
         COMBO(EQUAL, 13 23)
@@ -65,6 +56,7 @@
         COMBO(RIGHT_BRACKET, 17 27)
         COMBO(BACKSLASH, 18 28)
         COMBO(SCLN, 19 29)
+		*/
     };
 
     keymap {
@@ -74,7 +66,7 @@
             bindings = <
     &kp Q       &kp W      &kp E      &kp R      &kp T &kp Y     &kp U      &kp I      &kp O      &kp P   
     &mt LCTL A  &mt LGUI S &mt LALT D &mt LSFT F &kp G &kp H     &mt LSFT J &mt LALT K &mt LGUI L &mt LCTL QUOT
-    &lt SYS Z   &kp X      &kp C      &lt I3 V   &kp B &kp N     &lt I3 M   &kp CMMA   &kp DOT    &lt SYS SLASH
+    &lt SYS Z   &mt RGUI X      &kp C      &kp V   &kp B &kp N     &kp M   &kp CMMA   &mt RGUI DOT    &lt SYS SLASH
                 	&lt SYM TAB &lt NUM SPC &lt NAV RET &lt NAV BKSP &lt NUM DEL  &sk LSFT
             >;
         };
@@ -102,15 +94,6 @@
     &kp F1 &kp F2 &kp F3 &kp F4 &none &kp HOME &kp PGDN &kp PGUP &kp END &none
     &mt LCTL F5 &mt LGUI F6 &mt LALT F7 &mt LSFT F8 &none &kp LARW &kp DARW &kp UARW &kp RARW &none
     &kp F9 &kp F10 &kp F11 &kp F12 &none &none &none &none &none &none
-                &trans &trans &trans &trans &trans &trans
-            >;
-        };
-
-        i3_layer {
-            bindings = <
-    &none &none &none &none &none &none &none &none &none &none 
-    &i3 LG(LA(NUM_1)) LG(NUM_1) &i3 LG(LA(NUM_2)) LG(NUM_2) &i3 LG(LA(NUM_3)) LG(NUM_3) &i3 LG(LA(NUM_4)) LG(NUM_4) &i3 LG(LA(NUM_5)) LG(NUM_5) &i3 LG(LA(NUM_6)) LG(NUM_6) &i3 LG(LA(NUM_7)) LG(NUM_7) &i3 LG(LA(NUM_8)) LG(NUM_8) &i3 LG(LA(NUM_9)) LG(NUM_9) &i3 LG(LA(NUM_0)) LG(NUM_0) 
-    &none &none &none &none &none &none &none &none &none &none
                 &trans &trans &trans &trans &trans &trans
             >;
         };
