@@ -66,7 +66,7 @@
     &kp Q       &kp W      &kp E      &kp R      &kp T &kp Y     &kp U      &kp I      &kp O      &kp P   
     &mt LCTL A  &mt LGUI S &mt LALT D &mt LSFT F &kp G &kp H     &mt LSFT J &mt LALT K &mt LGUI L &mt LCTL QUOT
     &lt SYS Z   &mt RGUI X      &kp C      &kp V   &kp B &kp N     &kp M   &kp CMMA   &mt RGUI DOT    &lt SYS SLASH
-                	&kp TAB &lt NUM SPC &lt NAV RET &lt NAV BKSP &lt NUM DEL  &sk LSFT
+                	&kp TAB &lt NUM SPC &lt NAV RET &lt NAV BKSP &lt NUM DEL  &kp ESC
             >;
         };
 
