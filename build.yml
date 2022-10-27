@@ -1,3 +1,5 @@
 include:
-  - board: arch36_left
-  - board: arch36_right
+  - shield: arch36_left
+    board: nrfmicro_11_flipped
+  - shield: arch36_right
+    board: nrfmicro_11_flipped
