@@ -1,12 +1,12 @@
 board=nrfmicro_11_flipped
 keymap=default
 shield=arch36
-config_dir=~/dev/zmk-config/config
-zmk_dir=~/dev/zmk/app
-ZEPHYR_BASE=~/dev/zmk/app
+config_dir=$(HOME)/dev/zmk-config/config
+zmk_dir=$(HOME)/dev/zmk/app
+ZEPHYR_BASE=$(HOME)/dev/zmk/app
 
 
-.PHONY: build-left build-left-config build-right build-right-config flash
+.PHONY: build-left build-right flash-left flash-right
 build-left:
 	cd ${zmk_dir} && west build -b ${board} -d build/${shield}_left --pristine -- -DSHIELD=${shield}_left -DZMK_CONFIG=${config_dir}
 build-right:
@@ -23,4 +23,4 @@ flash-right:
 	cp ${zmk_dir}/build/${shield}_right/zephyr/zmk.uf2 /media/${USER}/NRF52BOOT/
 
 clean:
-	rm -rf ./build
+	rm -rf ${zmk_dir}/build
