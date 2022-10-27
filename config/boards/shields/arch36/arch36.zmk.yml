@@ -1,0 +1,12 @@
+file_format: "1"
+id: arch36
+name: Arch36
+type: shield
+url: https://github.com/obosob/arch-36
+requires: [pro_micro]
+features:
+  - keys
+  - display
+siblings:
+  - arch36_left
+  - arch36_right
