@@ -1,9 +1,9 @@
 board=nrfmicro_11_flipped
 keymap=default
 shield=arch36
-config_dir=/home/okke/dev/zmk-config/config
-zmk_dir=/home/okke/dev/zmk/app
-ZEPHYR_BASE=/home/okke/dev/zmk/app
+config_dir=~/dev/zmk-config/config
+zmk_dir=~/dev/zmk/app
+ZEPHYR_BASE=~/dev/zmk/app
 
 
 .PHONY: build-left build-left-config build-right build-right-config flash
