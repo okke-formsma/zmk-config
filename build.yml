@@ -1,0 +1,3 @@
+include:
+  - board: arch36_left
+  - board: arch36_right
