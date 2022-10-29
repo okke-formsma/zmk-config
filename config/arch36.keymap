@@ -9,19 +9,16 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping-term-ms = <150 >;
+    tapping-term-ms = <150>;
     quick-tap-ms = <150>;
 };
 
 &lt {
     flavor = "tap-preferred";
     tapping-term-ms = <150>;
-    quick-tap-ms = <250>;
+    quick-tap-ms = <150>;
 };
 
-&sk {
-    quick-release;
-};
 
 #define COMBO(NAME, KEYPOS) \
     combo_##NAME { \
